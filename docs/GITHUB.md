@@ -1,5 +1,5 @@
 # Publicación del proyecto en GitHub
-El ZIP contiene un repositorio Git local con las ramas `main`, `development` y `qa`, y commits reales en cada etapa.
+El ZIP contiene un repositorio Git local con las ramas `main`, `development` y `qa`, con commits de creación, backend, frontend y QA.
 
 1. Inicia sesión en https://github.com y crea un repositorio **vacío**, sin README ni .gitignore, llamado `punto-venta-ubm`.
 2. Abre una terminal en la carpeta del proyecto extraído (debe incluir la carpeta oculta `.git`).
