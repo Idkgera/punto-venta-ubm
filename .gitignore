@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+instance/*
+!instance/.gitkeep
+uploads/*
+!uploads/.gitkeep
+dist/
+build/
+*.spec

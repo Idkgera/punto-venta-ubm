@@ -1,0 +1,31 @@
+// Copia en https://dbdiagram.io
+Table usuarios {
+  id integer [pk, increment]
+  username varchar(80) [unique, not null]
+  password_hash text [not null]
+  created_at datetime [not null]
+}
+Table productos {
+  id integer [pk, increment]
+  nombre varchar(120) [not null]
+  descripcion text
+  marca varchar(100)
+  precio_centavos integer [not null]
+  stock integer [not null]
+  imagen varchar(255)
+  created_at datetime [not null]
+}
+Table ventas {
+  id integer [pk, increment]
+  usuario_id integer [not null, ref: > usuarios.id]
+  total_centavos integer [not null]
+  created_at datetime [not null]
+}
+Table detalle_ventas {
+  id integer [pk, increment]
+  venta_id integer [not null, ref: > ventas.id]
+  producto_id integer [not null, ref: > productos.id]
+  cantidad integer [not null]
+  precio_unitario_centavos integer [not null]
+  subtotal_centavos integer [not null]
+}
