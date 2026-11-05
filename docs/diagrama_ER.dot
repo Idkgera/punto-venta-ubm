@@ -1,0 +1,12 @@
+digraph ER {
+ graph [rankdir=LR, bgcolor="white", pad="0.3", nodesep="0.65", ranksep="0.8"];
+ node [shape=record, style="rounded,filled", fillcolor="#f3f8ff", color="#2c74bf", fontname="Arial", fontsize=11, margin="0.18"];
+ edge [fontname="Arial", fontsize=10, color="#52718f", penwidth=1.8];
+ usuarios [label="{USUARIOS|PK id : integer\lusername : varchar(80)\lpassword_hash : text\lcreated_at : datetime\l}"];
+ productos [label="{PRODUCTOS|PK id : integer\lnombre : varchar(120)\ldescripcion : text\lmarca : varchar(100)\lprecio_centavos : integer\lstock : integer\limagen : varchar(255)\lcreated_at : datetime\l}"];
+ ventas [label="{VENTAS|PK id : integer\lFK usuario_id : integer\ltotal_centavos : integer\lcreated_at : datetime\l}"];
+ detalle [label="{DETALLE_VENTAS|PK id : integer\lFK venta_id : integer\lFK producto_id : integer\lcantidad : integer\lprecio_unitario_centavos : integer\lsubtotal_centavos : integer\l}"];
+ usuarios -> ventas [label="1 : N"];
+ ventas -> detalle [label="1 : N"];
+ productos -> detalle [label="1 : N"];
+}
